@@ -1,0 +1,31 @@
+{
+       "tableName": "transaction_facts",
+       "tableType": "REALTIME      ",
+       "segmentsConfig": {
+              "timeColumnName": "transaction_date",
+              "timeType": "MILLISECONDS",
+              "replication": "1",
+              "schemaName": "transaction_facts"
+       },
+       "tenants": {
+              "broker": "DefaultTenant",
+              "server": "DefaultTenant"
+       },
+       "tableIndexConfig": {
+              "localMode": "MMAP",
+              "invertedIndexColumn": ["transaction_type", "currency", "branch_id"],
+              "sortedColumn": ["transaction_date"]
+       },
+       "ingestionConfig": {
+             "streamIngestionConfig": {
+              "streamConfigMaps": [
+                     {
+                            
+                     }
+              ]
+             }
+       },
+       "medtadata": {
+              "customConfigs": {}
+       }
+}
